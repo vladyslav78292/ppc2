@@ -267,16 +267,16 @@ img {
   padding-bottom: 60px;
 }
 
-.location > div:last-of-type > div {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
 .location > div:last-of-type > div > a {
   font-weight: bold;
   font-size: 18px;
   transition: all 0.2s linear;
+}
+
+.location > div:last-of-type > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .location > div:last-of-type > div > a:hover {
