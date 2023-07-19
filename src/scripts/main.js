@@ -32,6 +32,36 @@ if (feedback) {
   });
 }
 
+let scrollpos = window.scrollY
+const header = document.querySelector("header")
+const header_height = header.offsetHeight
+
+
+const add_class_on_scroll = () => header.classList.add("header__background");
+const remove_class_on_scroll = () => header.classList.remove("header__background");
+
+
+window.addEventListener('scroll', function() { 
+  scrollpos = window.scrollY
+
+  if (scrollpos >= header_height) { add_class_on_scroll() }
+  else { remove_class_on_scroll() }
+
+})
+
+const cookie_button = document.querySelectorAll('.cookie-popup__button');
+const cookie_popup = document.getElementById('cookie-popup');
+
+cookie_button.forEach((element) => {
+  element.addEventListener('click', () => {
+    cookie_popup.style = "bottom: -220px";
+  })
+})
+
+setTimeout(() => {
+  document.querySelector('#cookie-popup').style = 'bottom: 30px; opacity: 1;';
+}, 1000);
+
 
 const tl = gsap.timeline();
 tl.from([".logo, .menu-items a, .lang"], {
